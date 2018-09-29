@@ -37,6 +37,8 @@ gem 'fog-aws'
 
 gem 'figaro'
 
+gem 'mini_magick
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
