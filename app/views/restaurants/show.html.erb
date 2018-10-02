@@ -8,6 +8,9 @@
 		  <%= @restaurant.name %>
 		</h2>
 
+		<div class="star-rating" data-score= <%= @avg_rating %> ></div>
+		<p><%= "#{@reviews.length} reviews" %></p>
+
 		<p>
 		  <strong>Address:</strong>
 		  <%= @restaurant.address %>
@@ -31,7 +34,7 @@
 			<h3>No reviews yet. Be the first to write one!</h3>
 		<% else %>
 			<% @reviews.each do |review| %>
-				<div class="start-rating" data-score=<%= review.rating %> ></div>
+				<div class="star-rating" data-score=<%= review.rating %> ></div>
 				<p><%= review.comment %></p>
 			<% end %>
 		<% end %>
@@ -43,7 +46,7 @@
 <%= link_to 'Back', restaurants_path, class: "btn btn-link"  %>
 
 <script>
-	$('.start-rating').raty({
+	$('.star-rating').raty({
 		path: 'https://s3.amazonaws.com/yelpdemo05/stars/',
 		readOnly: true,
 		score: function() {
