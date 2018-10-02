@@ -11,9 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field" class="form-group">
-    <%= form.label :rating %>
-    <%= form.number_field :rating, class: "form-control" %>
+  <div id="start-rating">
+
   </div>
 
   <div class="field" class="form-group">
@@ -25,3 +24,10 @@
     <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<script>
+  $('#start-rating').raty({
+    path: 'https://s3.amazonaws.com/yelpdemo05/stars/',
+    scoreName: 'review[rating]'
+  });
+</script>
