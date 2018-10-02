@@ -17,5 +17,7 @@
 
 //= require popper
 //= require jquery3
+//= require jquery.raty
 
 //= require bootstrap-sprockets
+
