@@ -14,8 +14,10 @@
     <div class="container">
       <% flash.each do |name, msg| %>
         <%if msg.is_a?(String) %>
-          <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissable">
-            <button type="button" class="close" data-dimiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+           <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissable fade show role="alert"">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
           </div>
         <% end %>
