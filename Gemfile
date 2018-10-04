@@ -41,6 +41,8 @@ gem 'mini_magick'
 
 gem 'devise'
 
+gem 'searchkick'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

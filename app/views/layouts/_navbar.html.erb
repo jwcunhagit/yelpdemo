@@ -7,30 +7,37 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "About", pages_about_url, class: "nav-link" %>
+          <%= link_to "About", pages_about_url %>
         </li>
+        &nbsp&nbsp&nbsp
         <li class="nav-item">
-          <%= link_to "Contact", pages_contact_url, class: "nav-link" %>
+          <%= link_to "Contact", pages_contact_url %>
         </li>
       </ul>
-      <form class="form-inline  my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      
+      <%= form_tag search_restaurants_path, method: :get, class: "form-inline  my-2 my-lg-0" do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2"%>
+          <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        </p>
+      <% end %>
+
+      &nbsp&nbsp&nbsp&nbsp
+      
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>&nbsp&nbsp&nbsp
           </li>
           <li class="nav-item active">
-            <%= link_to "Edit profile", edit_user_registration_url, class: "nav-link" %>
+            <%= link_to "Edit profile", edit_user_registration_url %>
           </li>
         <% else %>
           <li class="nav-item active">
-            <%= link_to "Sign up", new_user_registration_url, class: "nav-link" %>
+            <%= link_to "Sign up", new_user_registration_url %>&nbsp&nbsp&nbsp
           </li>
           <li class="nav-item active">
-            <%= link_to "Sign in", new_user_session_url, class: "nav-link" %>
+            <%= link_to "Sign in", new_user_session_url %>
           </li>
         <% end %>
       </ul>
